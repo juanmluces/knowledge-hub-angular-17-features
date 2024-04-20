@@ -1,0 +1,26 @@
+mat-toolbar {
+	display: flex;
+	gap: 1rem;
+	// position: relative;
+	--left-margin: -64px;
+	&.show-back {
+		--left-margin: 0px;
+	}
+	.back {
+		position: relative;
+		transition: left ease-in-out 300ms;
+
+		left: var(--left-margin);
+	}
+	.logo {
+		transition: margin-left ease-in-out 300ms;
+		width: 150px;
+		margin-left: var(--left-margin);
+	}
+}
+
+.container {
+	max-width: 1600px;
+	margin: auto;
+	padding: 1rem;
+}

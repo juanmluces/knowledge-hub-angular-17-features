@@ -1,0 +1,27 @@
+:host {
+	display: block;
+}
+
+h1 {
+	margin-left: 1rem;
+	margin-bottom: 0;
+}
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+mat-card {
+	margin: auto;
+	max-width: 500px;
+	[mat-card-image] {
+		object-fit: contain;
+		max-height: 250px;
+	}
+}
+
+[matListItemAvatar] {
+	object-fit: contain;
+	border-radius: 0 !important;
+}

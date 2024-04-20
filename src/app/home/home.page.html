@@ -1,0 +1,24 @@
+<h1>Chapters</h1>
+<div class="grid">
+	<mat-nav-list (mouseleave)="displayCard.set(undefined)">
+		@for (chapter of chapters(); track $index) {
+			<mat-list-item [routerLink]="chapter.route" (mouseenter)="displayCard.set(chapter)">
+				<span matListItemTitle>{{ chapter.title }}</span>
+				<img [src]="chapter.image" matListItemAvatar />
+			</mat-list-item>
+		}
+	</mat-nav-list>
+	<div class="link-image">
+		@if (displayCard(); as hoveredChapter) {
+			<mat-card>
+				<mat-card-header>
+					<mat-card-title>{{ hoveredChapter.title }}</mat-card-title>
+				</mat-card-header>
+				<img mat-card-image [src]="hoveredChapter.image" />
+				<mat-card-content>
+					{{ hoveredChapter.description }}
+				</mat-card-content>
+			</mat-card>
+		}
+	</div>
+</div>
