@@ -1,0 +1,12 @@
+:host {
+	display: block;
+}
+
+mat-form-field {
+	width: 100%;
+}
+
+mat-list {
+	max-height: 50vh;
+	overflow: auto;
+}

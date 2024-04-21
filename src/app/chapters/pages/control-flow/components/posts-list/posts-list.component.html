@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline">
+	<mat-label>Posts</mat-label>
+	<input matInput type="text" (input)="filterPosts()" [(ngModel)]="filterValue" />
+	<button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+		<mat-icon>close</mat-icon>
+	</button>
+</mat-form-field>
+
+<mat-list role="list">
+	<mat-list-item *ngFor="let post of filteredPosts; trackBy: trackByFn; let i = index" role="listitem">
+		<mat-icon matListItemIcon>article</mat-icon>
+		{{ i }} - {{ post.title }}
+	</mat-list-item>
+	<mat-list-item *ngIf="filteredPosts.length === 0"> No post found...</mat-list-item>
+</mat-list>
