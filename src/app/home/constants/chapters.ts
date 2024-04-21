@@ -35,4 +35,4 @@ export const CHAPTERS = [
 		image: 'assets/component-input-binding.png',
 		description: `Router function that enables binding information from the Router state directly to the inputs of the component in Route configurations.`
 	}
-]
+];

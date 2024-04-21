@@ -1,5 +1,5 @@
 {
-	"semi": false,
+	"semi": true,
 	"singleQuote": true,
 	"useTabs": true,
 	"bracketSameLine": true,
@@ -17,4 +17,3 @@
 		}
 	]
 }
-

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-import { HeavyCardComponent } from './components/heavy-component/heavy-card.component'
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HeavyCardComponent } from './components/heavy-component/heavy-card.component';
 
 @Component({
 	selector: 'app-deferred-loading',

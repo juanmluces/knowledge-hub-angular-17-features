@@ -1,0 +1,24 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title> Signal Counter </mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<div class="manual-count">
+			<mat-form-field>
+				<input [(ngModel)]="manualCount" value="0" matInput type="number" />
+			</mat-form-field>
+			<button (click)="manuallySetCount()" mat-button color="primary">Set count manually</button>
+		</div>
+
+		<p>
+			Current Count: <strong>{{ count() }}</strong>
+		</p>
+		<p>
+			Double Count: <strong>{{ doubleCount() }}</strong>
+		</p>
+	</mat-card-content>
+	<mat-card-actions>
+		<button (click)="addCount()" mat-raised-button color="primary">Add</button>
+		<button (click)="subtractCont()" mat-button color="warn">Subtract</button>
+	</mat-card-actions>
+</mat-card>

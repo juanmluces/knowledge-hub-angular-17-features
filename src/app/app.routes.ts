@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router'
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,4 +34,4 @@ export const routes: Routes = [
 				c => c.ComponentInputBindingPage
 			)
 	}
-]
+];

@@ -1,41 +1,41 @@
 export type Post = {
-	userId: number
-	id: number
-	title: string
-	body: string
-}
+	userId: number;
+	id: number;
+	title: string;
+	body: string;
+};
 
 export interface User {
-	id: number
-	name: string
-	username: string
-	email: string
-	address: Address
-	phone: string
-	website: string
-	company: Company
+	id: number;
+	name: string;
+	username: string;
+	email: string;
+	address: Address;
+	phone: string;
+	website: string;
+	company: Company;
 }
 
 interface Company {
-	name: string
-	catchPhrase: string
-	bs: string
+	name: string;
+	catchPhrase: string;
+	bs: string;
 }
 
 interface Address {
-	street: string
-	suite: string
-	city: string
-	zipcode: string
-	geo: Geo
+	street: string;
+	suite: string;
+	city: string;
+	zipcode: string;
+	geo: Geo;
 }
 
 interface Geo {
-	lat: string
-	lng: string
+	lat: string;
+	lng: string;
 }
 
-export type PostResponse = { type: 'posts'; payload: Post[] }
-export type UserResponse = { type: 'users'; payload: User[] }
+export type PostResponse = { type: 'posts'; payload: Post[] };
+export type UserResponse = { type: 'users'; payload: User[] };
 
-export type ResponseType = PostResponse | UserResponse
+export type ResponseType = PostResponse | UserResponse;

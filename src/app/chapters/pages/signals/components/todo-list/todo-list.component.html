@@ -1,0 +1,29 @@
+<h2>ToDo list ({{ totalTodos() }})</h2>
+
+<form (submit)="createToDo()">
+	<mat-form-field appearance="outline">
+		<mat-label>Posts</mat-label>
+		<input name="todo" matInput type="text" [(ngModel)]="newTodoValue" />
+		@if (newTodoValue) {
+			<button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="newTodoValue = ''">
+				<mat-icon>close</mat-icon>
+			</button>
+		}
+	</mat-form-field>
+	<button type="submit" mat-raised-button color="primary" [disabled]="!newTodoValue">
+		<mat-icon>save</mat-icon>
+		Create ToDo
+	</button>
+</form>
+<mat-list role="list">
+	@for (todo of todos(); track $index) {
+		<mat-list-item role="listitem">
+			<span matListItemTitle> {{ $index + 1 }} - {{ todo }} </span>
+			<button (click)="removeToDo($index)" color="warn" mat-icon-button matListItemMeta>
+				<mat-icon color="warn">delete</mat-icon>
+			</button>
+		</mat-list-item>
+	} @empty {
+		<mat-list-item> No ToDo found, create a new one to do something...</mat-list-item>
+	}
+</mat-list>
