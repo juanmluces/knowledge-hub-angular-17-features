@@ -1,0 +1,11 @@
+<mat-card>
+	<mat-card-header> <mat-card-title> Custom Two way binding </mat-card-title> </mat-card-header>
+	<mat-card-content>
+		@if (expanded()) {
+			This is a very interesting mat-card-content
+		}
+	</mat-card-content>
+	<mat-card-actions>
+		<button (click)="expanded.set(!expanded())" mat-raised-button color="primary">Expand content</button>
+	</mat-card-actions>
+</mat-card>

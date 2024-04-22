@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline" subscriptSizing="dynamic">
+	<input (input)="updateQuery($event)" placeholder="search users" matInput type="text" />
+	<mat-icon matPrefix>search</mat-icon>
+</mat-form-field>
+<mat-list>
+	@for (user of filteredUsers(); track user.id) {
+		<mat-list-item>
+			<span matListItemTitle> {{ user.id }} - {{ user.name }} {{ user.surname }} </span>
+			<button (click)="deleteUser.emit(user.id)" matListItemMeta mat-icon-button color="warn">
+				<mat-icon color="warn">delete</mat-icon>
+			</button>
+		</mat-list-item>
+	}
+</mat-list>

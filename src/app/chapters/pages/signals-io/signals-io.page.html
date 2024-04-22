@@ -1,1 +1,22 @@
-<p>signals-io works!</p>
+<header>
+	<h1>Signals</h1>
+</header>
+<main>
+	<div class="container">
+		<h2>New user</h2>
+		<form [formGroup]="formGroup" (ngSubmit)="addNewUser()">
+			<mat-form-field [subscriptSizing]="'dynamic'">
+				<mat-label>Name</mat-label>
+				<input formControlName="name" matInput type="text" />
+			</mat-form-field>
+			<mat-form-field [subscriptSizing]="'dynamic'">
+				<mat-label>Surname</mat-label>
+				<input formControlName="surname" matInput type="text" />
+			</mat-form-field>
+			<button type="submit" color="primary" mat-raised-button>Add new users</button>
+		</form>
+
+		<app-users-list (deleteUser)="onDeleteUser($event)" [users]="users" />
+	</div>
+</main>
+
