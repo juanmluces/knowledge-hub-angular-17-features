@@ -1,1 +1,42 @@
-<p>component-input-binding works!</p>
+<header>
+	<h1>Component Input Binding</h1>
+</header>
+<main>
+	<div class="container">
+		<mat-card>
+			<mat-card-content>
+				<mat-list>
+					<h3 matSubheader>Route Data:</h3>
+					<mat-list-item>
+						<div class="grid">
+							<span> Title: </span>
+							<strong>{{ title }}</strong>
+						</div>
+					</mat-list-item>
+					<mat-list-item>
+						<div class="grid">
+							<span> Description: </span>
+							<strong>{{ description }}</strong>
+						</div>
+					</mat-list-item>
+					<mat-divider />
+					<h3 matSubheader>Query Params:</h3>
+					<mat-list-item>
+						<div class="grid">
+							<span> Search: </span>
+							<strong>{{ search }}</strong>
+						</div>
+					</mat-list-item>
+					<mat-divider />
+					<h3 matSubheader>Params:</h3>
+					<mat-list-item>
+						<div class="grid">
+							<span> Entity ID: </span>
+							<strong>{{ entityId }}</strong>
+						</div>
+					</mat-list-item>
+				</mat-list>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</main>

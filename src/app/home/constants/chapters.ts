@@ -31,7 +31,7 @@ export const CHAPTERS = [
 	},
 	{
 		title: 'Component input binding',
-		route: ['/', 'component-input-binding'],
+		route: ['/', 'component-input-binding', '1234'],
 		image: 'assets/component-input-binding.png',
 		description: `Router function that enables binding information from the Router state directly to the inputs of the component in Route configurations.`
 	}

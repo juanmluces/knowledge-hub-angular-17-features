@@ -28,10 +28,14 @@ export const routes: Routes = [
 		loadComponent: () => import('./chapters/pages/signals-twb/signals-twb.page').then(c => c.SignalsTwbPage)
 	},
 	{
-		path: 'component-input-binding',
+		path: 'component-input-binding/:entityId',
 		loadComponent: () =>
 			import('./chapters/pages/component-input-binding/component-input-binding.page').then(
 				c => c.ComponentInputBindingPage
-			)
+			),
+		data: {
+			title: 'Component title',
+			description: 'Component description'
+		}
 	}
 ];
