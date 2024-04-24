@@ -15,20 +15,43 @@ import { MatFormField, MatInput } from '@angular/material/input';
 })
 export class CounterComponent {
 	manualCount = 0;
-	count = signal(0);
-	doubleCount = computed(() => {
-		return this.count() * 2;
-	});
+	count = 0;
+	doubleCount = this.count * 2;
 
 	addCount() {
-		this.count.update(val => ++val);
+		this.count++;
+		this.doubleCount = this.count * 2;
 	}
 
 	subtractCont() {
-		this.count.update(val => --val);
+		this.count--;
+		this.doubleCount = this.count * 2;
 	}
 
 	manuallySetCount() {
-		this.count.set(this.manualCount);
+		this.count = this.manualCount;
+		this.doubleCount = this.count * 2;
 	}
+
+	// count = signal(0);
+	// doubleCount = computed(() => {
+	// 	return this.count() * 2;
+	// });
+
+	// count = signal(0);
+	// doubleCount = computed(() => {
+	// 	return this.count() * 2;
+	// });
+
+	// addCount() {
+	// 	this.count.update(val => ++val);
+	// }
+
+	// subtractCont() {
+	// 	this.count.update(val => --val);
+	// }
+
+	// manuallySetCount() {
+	// 	this.count.set(this.manualCount);
+	// }
 }

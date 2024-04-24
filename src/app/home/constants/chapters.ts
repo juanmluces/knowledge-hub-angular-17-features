@@ -12,6 +12,12 @@ export const CHAPTERS = [
 		description: `Deferrable views help you optimize your initial bundle size and improve the initial load of your application by allowing you to declaratively lazy load portions of your template until they are needed later.`
 	},
 	{
+		title: 'Component input binding',
+		route: ['/', 'component-input-binding', '1234'],
+		image: 'assets/component-input-binding-2.png',
+		description: `Router function that enables binding information from the Router state directly to the inputs of the component in Route configurations.`
+	},
+	{
 		title: 'Signals',
 		route: ['/', 'signals'],
 		image: 'assets/signal.png',
@@ -28,11 +34,5 @@ export const CHAPTERS = [
 		route: ['/', 'signals-two-way-binding'],
 		image: 'assets/signal-twb.png',
 		description: `With the new  signals input() and output() functions, we now have new signal based Two way binding! `
-	},
-	{
-		title: 'Component input binding',
-		route: ['/', 'component-input-binding', '1234'],
-		image: 'assets/component-input-binding.png',
-		description: `Router function that enables binding information from the Router state directly to the inputs of the component in Route configurations.`
 	}
 ];

@@ -5,16 +5,18 @@
 	<mat-card-content>
 		<div class="manual-count">
 			<mat-form-field>
-				<input [(ngModel)]="manualCount" value="0" matInput type="number" />
+				<input [(ngModel)]="manualCount" matInput type="number" />
 			</mat-form-field>
 			<button (click)="manuallySetCount()" mat-button color="primary">Set count manually</button>
 		</div>
 
 		<p>
-			Current Count: <strong>{{ count() }}</strong>
+			<!-- Current Count: <strong>{{ count() }}</strong> -->
+			Current Count: <strong>{{ count }}</strong>
 		</p>
 		<p>
-			Double Count: <strong>{{ doubleCount() }}</strong>
+			<!-- Double Count: <strong>{{ doubleCount() }}</strong> -->
+			Double Count: <strong>{{ doubleCount }}</strong>
 		</p>
 	</mat-card-content>
 	<mat-card-actions>
