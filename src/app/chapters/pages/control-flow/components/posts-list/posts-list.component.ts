@@ -43,6 +43,9 @@ export class PostsListComponent implements OnInit {
 	}
 
 	filterPosts() {
-		this.filteredPosts = this.posts.filter(post => post.title.includes(this.filterValue.toLowerCase().trim()));
+		this.filteredPosts = this.posts.filter(post =>
+			post.title.toLowerCase().trim().includes(this.filterValue.toLowerCase().trim())
+		);
 	}
 }
+
