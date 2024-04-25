@@ -13,7 +13,7 @@ export const CHAPTERS = [
 	},
 	{
 		title: 'Component input binding',
-		route: ['/', 'component-input-binding', '1234'],
+		route: ['/', 'component-input-binding', '42'],
 		image: 'assets/component-input-binding-2.png',
 		description: `Router function that enables binding information from the Router state directly to the inputs of the component in Route configurations.`
 	},
@@ -36,3 +36,4 @@ export const CHAPTERS = [
 		description: `With the new  signals input() and output() functions, we now have new signal based Two way binding! `
 	}
 ];
+
