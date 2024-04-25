@@ -38,11 +38,6 @@ export class CounterComponent {
 	// 	return this.count() * 2;
 	// });
 
-	// count = signal(0);
-	// doubleCount = computed(() => {
-	// 	return this.count() * 2;
-	// });
-
 	// addCount() {
 	// 	this.count.update(val => ++val);
 	// }
@@ -55,3 +50,4 @@ export class CounterComponent {
 	// 	this.count.set(this.manualCount);
 	// }
 }
+
