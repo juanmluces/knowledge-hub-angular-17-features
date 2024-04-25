@@ -6,22 +6,26 @@
 	</div>
 </header>
 <main>
-	<ng-template #loading>
-		<mat-spinner></mat-spinner>
-	</ng-template>
-
-	<ng-container *ngIf="!isLoading; else loading">
+	@if (!isLoading) {
 		<div class="container">
-			<ng-container *ngIf="responseData as item; else noData">
-				<ng-container [ngSwitch]="item.type">
-					<app-posts-list [posts]="$any(item.payload)" *ngSwitchCase="'posts'" />
-					<app-users-list [users]="$any(item.payload)" *ngSwitchCase="'users'" />
-					<div *ngSwitchDefault>unknown data type...</div>
-				</ng-container>
-			</ng-container>
-			<ng-template #noData>
+			@if (responseData; as item) {
+				@switch (item.type) {
+					@case ('posts') {
+						<app-posts-list [posts]="item.payload" />
+					}
+					@case ('users') {
+						<app-users-list [users]="item.payload" />
+					}
+					@default {
+						<p>No data</p>
+					}
+				}
+			} @else {
 				<p>No data</p>
-			</ng-template>
+			}
 		</div>
-	</ng-container>
+	} @else {
+		<mat-spinner></mat-spinner>
+	}
 </main>
+

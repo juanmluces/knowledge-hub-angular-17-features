@@ -30,3 +30,4 @@ export class TodoListComponent {
 		this.todoService.removeToDo(index);
 	}
 }
+

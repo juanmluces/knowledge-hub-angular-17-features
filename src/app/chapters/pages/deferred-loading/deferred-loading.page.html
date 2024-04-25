@@ -3,16 +3,19 @@
 </header>
 <main>
 	@for (heavyCard of [].constructor(99); track $index) {
-		<!-- <div #trigger class="trigger-box">
-				<p>This is a <strong>trigger</strong></p>
-			</div> -->
+		<div #trigger class="trigger-box">
+			<p>This is a <strong>trigger</strong></p>
+		</div>
 
-		<section [class.odd]="$odd">
-			<app-heavy-card />
-		</section>
-
-		<!-- <div class="loading">
+		@defer (on viewport(trigger)) {
+			<section [class.odd]="$odd">
+				<app-heavy-card />
+			</section>
+		} @placeholder {
+			<div class="loading">
 				<mat-spinner></mat-spinner>
-			</div> -->
+			</div>
+		}
 	}
 </main>
+

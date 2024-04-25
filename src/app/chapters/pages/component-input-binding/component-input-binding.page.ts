@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -13,16 +13,16 @@ import { ActivatedRoute } from '@angular/router';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentInputBindingPage {
-	title = '';
-	description = '';
-	search = '';
-	entityId = '';
-	activeRoute = inject(ActivatedRoute);
+	@Input() title = '';
+	@Input() description = '';
+	@Input() search = '';
+	@Input() entityId = '';
+	// activeRoute = inject(ActivatedRoute);
 
 	ngOnInit() {
 		// this.getDataFromSubscription();
 		// this.getDataFromSnapshot();
-		console.log(this.activeRoute.snapshot);
+		// console.log(this.activeRoute.snapshot);
 
 		console.log({
 			title: this.title,
@@ -32,23 +32,24 @@ export class ComponentInputBindingPage {
 		});
 	}
 
-	getDataFromSnapshot() {
-		this.title = this.activeRoute.snapshot.data['title'];
-		this.description = this.activeRoute.snapshot.data['description'];
-		this.search = this.activeRoute.snapshot.queryParams['search'];
-		this.entityId = this.activeRoute.snapshot.params['entityId'];
-	}
+	// getDataFromSnapshot() {
+	// 	this.title = this.activeRoute.snapshot.data['title'];
+	// 	this.description = this.activeRoute.snapshot.data['description'];
+	// 	this.search = this.activeRoute.snapshot.queryParams['search'];
+	// 	this.entityId = this.activeRoute.snapshot.params['entityId'];
+	// }
 
-	getDataFromSubscription() {
-		this.activeRoute.queryParams.subscribe(query => {
-			this.search = query['search'];
-		});
-		this.activeRoute.data.subscribe(data => {
-			this.title = data['title'];
-			this.description = data['description'];
-		});
-		this.activeRoute.params.subscribe(params => {
-			this.entityId = params['entityId'];
-		});
-	}
+	// getDataFromSubscription() {
+	// 	this.activeRoute.queryParams.subscribe(query => {
+	// 		this.search = query['search'];
+	// 	});
+	// 	this.activeRoute.data.subscribe(data => {
+	// 		this.title = data['title'];
+	// 		this.description = data['description'];
+	// 	});
+	// 	this.activeRoute.params.subscribe(params => {
+	// 		this.entityId = params['entityId'];
+	// 	});
+	// }
 }
+
