@@ -9,13 +9,14 @@
 		<!-- <input matInput ngModel [ngModel]="ngModelInputValue" (ngModelChange)="ngModelInputValue = $event" type="text" /> -->
 	</mat-form-field>
 	<hr />
-	<!-- <button (click)="expanded = !expanded" mat-button color="accent">
+	<button (click)="expanded = !expanded" mat-button color="accent">
 		Card is {{ expanded ? 'Expanded' : 'Closed' }}
-	</button> -->
-	<button (click)="expanded.set(!expanded())" mat-button color="accent">
-		Card is {{ expanded() ? 'Expanded' : 'Closed' }}
 	</button>
-	<app-twb-card [(expanded)]="expanded" />
-	<!-- <app-twb-card [expanded]="expanded" (expandedChange)="expanded = $event" /> -->
+	<!-- <button (click)="expanded.set(!expanded())" mat-button color="accent">
+		Card is {{ expanded() ? 'Expanded' : 'Closed' }}
+	</button> -->
+
+	<!-- <app-twb-card [(expanded)]="expanded" /> -->
+	<app-twb-card [expanded]="expanded" (expandedChange)="expanded = $event" />
 </main>
 

@@ -16,7 +16,7 @@ import { TwbCardComponent } from './components/twb-card/twb-card.component';
 export class SignalsTwbPage {
 	ngModelInputValue = 'Initial NgModel';
 
-	// expanded = false;
-	expanded = signal(false);
+	expanded = false;
+	// expanded = signal(false);
 }
 

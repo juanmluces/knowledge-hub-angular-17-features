@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, model } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -11,7 +11,6 @@ import { MatCardModule } from '@angular/material/card';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TwbCardComponent {
-	// @Input() expanded = false;
-	// @Output() expandedChange = new EventEmitter<boolean>();
-	expanded = model.required();
+	@Input() expanded = false;
+	@Output() expandedChange = new EventEmitter<boolean>();
 }
