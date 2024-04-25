@@ -27,8 +27,12 @@ export class AppComponent {
 	showBack = toSignal(
 		inject(Router).events.pipe(
 			filter(event => event instanceof NavigationEnd),
-			map(event => (event as NavigationEnd).url !== '/home')
+			map(event => {
+				const url = (event as NavigationEnd).url;
+				return url !== '/' && url !== '/home';
+			})
 		),
 		{ initialValue: false }
 	);
 }
+

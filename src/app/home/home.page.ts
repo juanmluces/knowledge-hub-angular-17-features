@@ -17,7 +17,5 @@ import { CHAPTERS } from './constants/chapters';
 export class HomePage {
 	chapters = signal([...CHAPTERS]);
 	displayCard = signal<any>(undefined);
-	setChapter() {
-		console.log('helloe');
-	}
 }
+
