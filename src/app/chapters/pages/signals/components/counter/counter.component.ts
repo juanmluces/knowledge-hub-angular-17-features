@@ -32,22 +32,5 @@ export class CounterComponent {
 		this.count = this.manualCount;
 		this.doubleCount = this.count * 2;
 	}
-
-	// count = signal(0);
-	// doubleCount = computed(() => {
-	// 	return this.count() * 2;
-	// });
-
-	// addCount() {
-	// 	this.count.update(val => ++val);
-	// }
-
-	// subtractCont() {
-	// 	this.count.update(val => --val);
-	// }
-
-	// manuallySetCount() {
-	// 	this.count.set(this.manualCount);
-	// }
 }
 
