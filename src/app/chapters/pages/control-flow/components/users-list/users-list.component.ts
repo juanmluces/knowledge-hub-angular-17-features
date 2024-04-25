@@ -43,6 +43,9 @@ export class UsersListComponent {
 	}
 
 	filterUsers() {
-		this.filteredUsers = this.users.filter(user => user.name.includes(this.filterValue.toLowerCase().trim()));
+		this.filteredUsers = this.users.filter(user =>
+			user.name.toLowerCase().trim().includes(this.filterValue.toLowerCase().trim())
+		);
 	}
 }
+
