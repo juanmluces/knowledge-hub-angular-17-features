@@ -1,4 +1,15 @@
-import { ChangeDetectionStrategy, Component, computed, input, output, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	Output,
+	computed,
+	input,
+	output,
+	signal
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,20 +26,12 @@ import { User } from '../../types/users.type';
 	standalone: true
 })
 export class UsersListComponent {
-	// @Input({ alias: 'users' }) set _users(val: User[]) {
-	// 	this.users.set(val);
-	// }
+	@Input() users: User[] = [];
 
-	// @Output() deleteUser = new EventEmitter<number>();
-	deleteUser = output<number>();
-
-	usersList = input.required({
-		alias: 'users',
-		transform: (val: User[]) => val
-	});
+	@Output() deleteUser = new EventEmitter<number>();
 
 	filteredUsers = computed(() => {
-		return this.usersList()?.filter(user => {
+		return this.users?.filter(user => {
 			const query = this.query().toLowerCase().trim();
 			return user.name.toLowerCase().trim().includes(query) || user.surname.toLowerCase().trim().includes(query);
 		});
